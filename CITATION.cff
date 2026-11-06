@@ -1,0 +1,34 @@
+cff-version: 1.2.0
+message: "Se você reutilizar estes dados, cite esta obra."
+type: dataset
+title: "Dados processados — MapBiomas Coleção 11 (2020–2025) e SIDRA/PAM (2000–2024, em preparação)"
+abstract: >-
+  Séries tabulares de áreas de lavouras temporárias e perenes no Brasil e por
+  bioma, derivadas do MapBiomas Coleção 11 (2020–2025, 30 m), e estatísticas
+  anuais da produção agrícola municipal do SIDRA/PAM (IBGE, 2000–2024)
+  agregadas por bioma, em preparação. Os dados acompanham o artigo do SBSR
+  2027.
+authors:
+  - family-names: Azevedo dos Santos
+    given-names: Priscilla
+    affiliation: "Instituto Nacional de Pesquisas Espaciais (INPE)"
+  - family-names: Adami
+    given-names: Marcos
+    affiliation: "Instituto Nacional de Pesquisas Espaciais (INPE)"
+  - family-names: Silva
+    given-names: Igor Leite da
+    affiliation: "Independent Researcher, São José dos Campos, SP, Brazil"
+year: 2026
+date-released: 2026-11-06
+license: CC-BY-SA-4.0
+url: "https://github.com/Priscasantos/sbsr-2027-results"
+keywords:
+  - MapBiomas
+  - Coleção 11
+  - uso e cobertura da terra
+  - lavouras
+  - biomas
+  - SIDRA
+  - PAM
+  - agricultura
+  - Brasil

@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Licença e atribuição — SBSR 2027</title>
+<meta name="description" content="Licença dos dados derivados (CC BY-SA 4.0), dados de origem, atribuições e fontes.">
+<style>
+:root {
+  --fundo: #fbfcfa;
+  --texto: #1c2a24;
+  --suave: #56665e;
+  --borda: #d7e1da;
+  --verde: #1f6b4a;
+  --verde-escuro: #123f2c;
+  --verde-claro: #e8f2ec;
+  --areia: #f3efe6;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--fundo);
+  color: var(--texto);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.6;
+}
+a { color: var(--verde); text-underline-offset: 2px; }
+a:hover { color: var(--verde-escuro); }
+.container { width: min(1120px, 100% - 2.5rem); margin: 0 auto; }
+header.topo {
+  background: linear-gradient(135deg, var(--verde-escuro), var(--verde));
+  color: #fff;
+  padding: 3rem 0 2.6rem;
+}
+header.topo a { color: #fff; }
+.eyebrow {
+  margin: 0 0 .6rem;
+  font-size: .78rem;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  opacity: .85;
+}
+h1 { margin: 0 0 .8rem; font-size: clamp(1.8rem, 4vw, 2.7rem); line-height: 1.2; }
+.lead { max-width: 60ch; margin: 0 0 1rem; font-size: 1.05rem; opacity: .95; }
+.resumo { margin: 0; font-size: .92rem; opacity: .9; }
+main { padding: 2.6rem 0 1rem; }
+section { margin-bottom: 3rem; }
+h2 {
+  margin: 0 0 .5rem;
+  font-size: 1.5rem;
+  border-bottom: 2px solid var(--verde-claro);
+  padding-bottom: .45rem;
+}
+h3 { margin: 1.8rem 0 .6rem; font-size: 1.12rem; }
+p { margin: .6rem 0; }
+.cartoes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+  margin-top: 1.2rem;
+}
+.cartao {
+  background: #fff;
+  border: 1px solid var(--borda);
+  border-radius: 10px;
+  padding: 1.1rem 1.15rem;
+  display: flex;
+  flex-direction: column;
+  gap: .45rem;
+}
+.cartao h3 { margin: 0; font-size: 1.05rem; }
+.cartao p { margin: 0; color: var(--suave); font-size: .93rem; }
+.cartao-meta { font-size: .82rem !important; color: var(--verde) !important; }
+.acoes { display: flex; flex-wrap: wrap; gap: .7rem; align-items: center; margin-top: auto; padding-top: .5rem; }
+.botao {
+  display: inline-block;
+  background: var(--verde);
+  color: #fff;
+  text-decoration: none;
+  padding: .38rem .8rem;
+  border-radius: 6px;
+  font-size: .88rem;
+}
+.botao:hover { background: var(--verde-escuro); color: #fff; }
+.arquivos { list-style: none; margin: .8rem 0 0; padding: 0; border-top: 1px solid var(--borda); }
+.arquivos li {
+  display: grid;
+  grid-template-columns: minmax(180px, 320px) 1fr auto;
+  gap: .8rem;
+  padding: .65rem 0;
+  border-bottom: 1px solid var(--borda);
+  font-size: .93rem;
+}
+.arquivos .tam { color: var(--suave); white-space: nowrap; font-variant-numeric: tabular-nums; }
+.aviso {
+  background: var(--areia);
+  border-left: 4px solid var(--verde);
+  padding: .9rem 1rem;
+  border-radius: 0 6px 6px 0;
+  margin: 1rem 0;
+}
+.ferramentas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .7rem;
+  align-items: center;
+  margin: 1.3rem 0 .4rem;
+}
+.ferramentas label { font-weight: 600; font-size: .92rem; }
+.ferramentas input {
+  flex: 1 1 260px;
+  min-width: 0;
+  padding: .55rem .7rem;
+  font: inherit;
+  border: 1px solid var(--borda);
+  border-radius: 6px;
+  background: #fff;
+}
+.ferramentas input:focus { outline: 2px solid var(--verde); outline-offset: 1px; }
+.contador { color: var(--suave); font-size: .88rem; font-variant-numeric: tabular-nums; }
+.dica { color: var(--suave); font-size: .86rem; margin-bottom: .9rem; }
+.tabela-wrap {
+  max-height: 72vh;
+  overflow: auto;
+  border: 1px solid var(--borda);
+  border-radius: 8px;
+  background: #fff;
+}
+table { border-collapse: collapse; width: 100%; font-size: .9rem; }
+thead th {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background: var(--verde-claro);
+  color: var(--verde-escuro);
+  text-align: left;
+  padding: .6rem .7rem;
+  border-bottom: 2px solid var(--verde);
+  white-space: nowrap;
+}
+td { padding: .5rem .7rem; border-bottom: 1px solid var(--borda); vertical-align: top; }
+tbody tr:nth-child(even) { background: #f5f9f6; }
+tbody tr:hover { background: var(--verde-claro); }
+tbody tr[hidden] { display: none; }
+td.num { text-align: right; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.voltar { display: inline-block; margin-bottom: 1.2rem; font-size: .9rem; }
+footer.rodape {
+  border-top: 1px solid var(--borda);
+  background: var(--areia);
+  padding: 1.6rem 0 2rem;
+  margin-top: 2rem;
+  font-size: .86rem;
+  color: var(--suave);
+}
+footer.rodape p { margin: .4rem 0; }
+footer.rodape strong { color: var(--texto); }
+code {
+  background: rgba(31, 107, 74, .08);
+  padding: .05rem .3rem;
+  border-radius: 4px;
+  font-size: .92em;
+}
+@media (max-width: 640px) {
+  .arquivos li { grid-template-columns: 1fr; gap: .1rem; }
+  .tabela-wrap { max-height: 65vh; }
+  header.topo { padding: 2.2rem 0 1.8rem; }
+}
+</style>
+</head>
+<body>
+
+<header class="topo">
+  <div class="container">
+    <p class="eyebrow">Licença e atribuição</p>
+    <h1>Como usar e citar estes dados</h1>
+    <p class="lead">Esta obra derivada é distribuída sob CC BY-SA 4.0; os dados
+    de origem seguem os termos da Coleção 11 do MapBiomas.</p>
+  </div>
+</header>
+<main>
+  <div class="container">
+    <a class="voltar" href="index.html">← Todos os dados</a>
+
+    <section>
+      <h2>Dados derivados — CC BY-SA 4.0</h2>
+      <p>Os arquivos em <code>docs/dados/</code> são dados derivados do
+      MapBiomas Coleção 11 e, quando presentes, do SIDRA/PAM (IBGE).
+      Eles são distribuídos sob a licença
+      <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.pt-br">Creative Commons Atribuição-CompartilhaIgual 4.0
+      Internacional (CC BY-SA 4.0)</a>.</p>
+      <p>Você pode copiar, redistribuir, remixar e transformar os dados para
+      qualquer finalidade, inclusive comercial, desde que atribua o crédito
+      adequado, indique as alterações e distribua as contribuições derivadas
+      sob a mesma licença. O texto legal completo está em
+      <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode.pt">creativecommons.org/licenses/by-sa/4.0/legalcode.pt</a>.</p>
+      <p>Atribuição sugerida: “Dados processados — MapBiomas Coleção 11 e
+      SIDRA/PAM (SBSR 2027)”, Priscilla Azevedo dos Santos, Marcos Adami e
+      Igor Leite da Silva, 2026, CC BY-SA 4.0.</p>
+    </section>
+
+    <section>
+      <h2>Dados de origem</h2>
+      <p>Os dados de origem do MapBiomas são regidos pelos termos da Coleção
+      11 do MapBiomas (consultar
+      <a href="https://mapbiomas.org">mapbiomas.org</a>); esta obra derivada não
+      altera nem relicencia esses termos. Os dados do SIDRA/PAM (IBGE) são
+      públicos.</p>
+    </section>
+
+    <section>
+      <h2>Resumo das licenças</h2>
+      <div class="tabela-wrap">
+      <table>
+        <thead><tr><th scope="col">Componente</th><th scope="col">Licença</th>
+        <th scope="col">Arquivo</th></tr></thead>
+        <tbody>
+          <tr><td>Dados derivados em <code>docs/dados/</code></td>
+          <td>CC BY-SA 4.0</td><td><code>LICENSE</code></td></tr>
+          <tr><td>Dados de origem</td>
+          <td>MapBiomas: conforme os termos da Coleção 11 (consultar
+          mapbiomas.org); SIDRA/PAM: dados públicos</td>
+          <td>—</td></tr>
+        </tbody>
+      </table>
+      </div>
+    </section>
+
+    <section>
+      <h2>Fontes</h2>
+      <ul>
+        <li><strong>MapBiomas Coleção 11</strong> — mapeamento anual de uso e
+        cobertura da terra do Brasil, 30 m. Os dados originais e a documentação
+        estão em <a href="https://mapbiomas.org">mapbiomas.org</a>.</li>
+        <li><strong>SIDRA/PAM (IBGE)</strong> — Produção Agrícola Municipal,
+        tabela 5457, em <a href="https://sidra.ibge.gov.br/tabela/5457">sidra.ibge.gov.br/tabela/5457</a>.
+        Dados públicos.</li>
+        <li><strong>Limites de bioma</strong> — limites de bioma utilizados no
+        pipeline; consulte a documentação do projeto para a fonte original.</li>
+      </ul>
+    </section>
+  </div>
+</main>
+
+<footer class="rodape">
+  <div class="container">
+    <p><strong>Atribuição.</strong> Dados de origem conforme os termos da
+    Coleção 11 do MapBiomas (consultar
+    <a href="https://mapbiomas.org">mapbiomas.org</a>); esta obra derivada é
+    distribuída sob <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.pt-br">CC BY-SA 4.0</a>.
+    SIDRA/PAM (IBGE) — dados públicos.
+    O código do pipeline disponível sob solicitação.</p>
+    <p>Licença deste conjunto de dados: <a href="licenca.html">CC BY-SA 4.0</a>.</p>
+    <p>Dados consolidados em 06/11/2026.</p>
+  </div>
+</footer>
+
+
+</body>
+</html>

@@ -1,0 +1,309 @@
+{
+  "niveis_solicitados": [
+    2,
+    4,
+    8,
+    16,
+    32,
+    64,
+    128
+  ],
+  "resampling": "nearest",
+  "compressao": "DEFLATE",
+  "arquivos": {
+    "mapbiomas_col11_brazil_2020_reclass.tif": {
+      "niveis": [
+        2,
+        4,
+        8,
+        16,
+        32,
+        64,
+        128
+      ],
+      "menor_overview_px": [
+        1206,
+        1144
+      ],
+      "shape_base": [
+        146437,
+        154469
+      ],
+      "crs": "EPSG:4326",
+      "unique_amostra_overview2": [
+        0,
+        19,
+        36
+      ]
+    },
+    "mapbiomas_col11_brazil_2020_reclass_albers.tif": {
+      "niveis": [
+        2,
+        4,
+        8,
+        16,
+        32,
+        64,
+        128
+      ],
+      "menor_overview_px": [
+        1236,
+        1152
+      ],
+      "shape_base": [
+        147498,
+        158237
+      ],
+      "crs": "EPSG:10857",
+      "unique_amostra_overview2": [
+        0,
+        19
+      ]
+    },
+    "mapbiomas_col11_brazil_2021_reclass.tif": {
+      "niveis": [
+        2,
+        4,
+        8,
+        16,
+        32,
+        64,
+        128
+      ],
+      "menor_overview_px": [
+        1206,
+        1144
+      ],
+      "shape_base": [
+        146437,
+        154469
+      ],
+      "crs": "EPSG:4326",
+      "unique_amostra_overview2": [
+        0,
+        19,
+        36
+      ]
+    },
+    "mapbiomas_col11_brazil_2021_reclass_albers.tif": {
+      "niveis": [
+        2,
+        4,
+        8,
+        16,
+        32,
+        64,
+        128
+      ],
+      "menor_overview_px": [
+        1236,
+        1152
+      ],
+      "shape_base": [
+        147498,
+        158237
+      ],
+      "crs": "EPSG:10857",
+      "unique_amostra_overview2": [
+        0,
+        19
+      ]
+    },
+    "mapbiomas_col11_brazil_2022_reclass.tif": {
+      "niveis": [
+        2,
+        4,
+        8,
+        16,
+        32,
+        64,
+        128
+      ],
+      "menor_overview_px": [
+        1206,
+        1144
+      ],
+      "shape_base": [
+        146437,
+        154469
+      ],
+      "crs": "EPSG:4326",
+      "unique_amostra_overview2": [
+        0,
+        19,
+        36
+      ]
+    },
+    "mapbiomas_col11_brazil_2022_reclass_albers.tif": {
+      "niveis": [
+        2,
+        4,
+        8,
+        16,
+        32,
+        64,
+        128
+      ],
+      "menor_overview_px": [
+        1236,
+        1152
+      ],
+      "shape_base": [
+        147498,
+        158237
+      ],
+      "crs": "EPSG:10857",
+      "unique_amostra_overview2": [
+        0,
+        19
+      ]
+    },
+    "mapbiomas_col11_brazil_2023_reclass.tif": {
+      "niveis": [
+        2,
+        4,
+        8,
+        16,
+        32,
+        64,
+        128
+      ],
+      "menor_overview_px": [
+        1206,
+        1144
+      ],
+      "shape_base": [
+        146437,
+        154469
+      ],
+      "crs": "EPSG:4326",
+      "unique_amostra_overview2": [
+        0,
+        19,
+        36
+      ]
+    },
+    "mapbiomas_col11_brazil_2023_reclass_albers.tif": {
+      "niveis": [
+        2,
+        4,
+        8,
+        16,
+        32,
+        64,
+        128
+      ],
+      "menor_overview_px": [
+        1236,
+        1152
+      ],
+      "shape_base": [
+        147498,
+        158237
+      ],
+      "crs": "EPSG:10857",
+      "unique_amostra_overview2": [
+        0,
+        19
+      ]
+    },
+    "mapbiomas_col11_brazil_2024_reclass.tif": {
+      "niveis": [
+        2,
+        4,
+        8,
+        16,
+        32,
+        64,
+        128
+      ],
+      "menor_overview_px": [
+        1206,
+        1144
+      ],
+      "shape_base": [
+        146437,
+        154469
+      ],
+      "crs": "EPSG:4326",
+      "unique_amostra_overview2": [
+        0,
+        19,
+        36
+      ]
+    },
+    "mapbiomas_col11_brazil_2024_reclass_albers.tif": {
+      "niveis": [
+        2,
+        4,
+        8,
+        16,
+        32,
+        64,
+        128
+      ],
+      "menor_overview_px": [
+        1236,
+        1152
+      ],
+      "shape_base": [
+        147498,
+        158237
+      ],
+      "crs": "EPSG:10857",
+      "unique_amostra_overview2": [
+        0,
+        19
+      ]
+    },
+    "mapbiomas_col11_brazil_2025_reclass.tif": {
+      "niveis": [
+        2,
+        4,
+        8,
+        16,
+        32,
+        64,
+        128
+      ],
+      "menor_overview_px": [
+        1206,
+        1144
+      ],
+      "shape_base": [
+        146437,
+        154469
+      ],
+      "crs": "EPSG:4326",
+      "unique_amostra_overview2": [
+        0,
+        19,
+        36
+      ]
+    },
+    "mapbiomas_col11_brazil_2025_reclass_albers.tif": {
+      "niveis": [
+        2,
+        4,
+        8,
+        16,
+        32,
+        64,
+        128
+      ],
+      "menor_overview_px": [
+        1236,
+        1152
+      ],
+      "shape_base": [
+        147498,
+        158237
+      ],
+      "crs": "EPSG:10857",
+      "unique_amostra_overview2": [
+        0,
+        19
+      ]
+    }
+  }
+}

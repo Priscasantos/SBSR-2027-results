@@ -1,0 +1,48 @@
+{
+  "pixels_total_grade": 23339641026,
+  "pixels_nao_bioma": 13879229214,
+  "biomas": {
+    "1": {
+      "bioma": "Amazônia",
+      "pixels": 4683815109,
+      "area_km2": 4215433.6,
+      "oficial_km2": 4196943.0,
+      "delta_pct": 0.441
+    },
+    "2": {
+      "bioma": "Cerrado",
+      "pixels": 2205059842,
+      "area_km2": 1984553.86,
+      "oficial_km2": 2036448.0,
+      "delta_pct": -2.548
+    },
+    "3": {
+      "bioma": "Caatinga",
+      "pixels": 958488570,
+      "area_km2": 862639.71,
+      "oficial_km2": 844453.0,
+      "delta_pct": 2.154
+    },
+    "4": {
+      "bioma": "Mata Atlântica",
+      "pixels": 1229816559,
+      "area_km2": 1106834.9,
+      "oficial_km2": 1110182.0,
+      "delta_pct": -0.301
+    },
+    "5": {
+      "bioma": "Pantanal",
+      "pixels": 167734446,
+      "area_km2": 150961.0,
+      "oficial_km2": 150355.0,
+      "delta_pct": 0.403
+    },
+    "6": {
+      "bioma": "Pampa",
+      "pixels": 215497286,
+      "area_km2": 193947.56,
+      "oficial_km2": 176496.0,
+      "delta_pct": 9.888
+    }
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "2020": {
+    "19": {
+      "nacional": 671810769,
+      "soma_biomas": 671810361,
+      "fora_biomas_px": 408,
+      "residuo_px": 408,
+      "residuo_pct": 6.1e-05
+    },
+    "36": {
+      "nacional": 27967605,
+      "soma_biomas": 27967593,
+      "fora_biomas_px": 12,
+      "residuo_px": 12,
+      "residuo_pct": 4.3e-05
+    }
+  },
+  "2021": {
+    "19": {
+      "nacional": 677001099,
+      "soma_biomas": 677000728,
+      "fora_biomas_px": 371,
+      "residuo_px": 371,
+      "residuo_pct": 5.5e-05
+    },
+    "36": {
+      "nacional": 27764232,
+      "soma_biomas": 27764220,
+      "fora_biomas_px": 12,
+      "residuo_px": 12,
+      "residuo_pct": 4.3e-05
+    }
+  },
+  "2022": {
+    "19": {
+      "nacional": 683172449,
+      "soma_biomas": 683172171,
+      "fora_biomas_px": 278,
+      "residuo_px": 278,
+      "residuo_pct": 4.1e-05
+    },
+    "36": {
+      "nacional": 27620991,
+      "soma_biomas": 27620979,
+      "fora_biomas_px": 12,
+      "residuo_px": 12,
+      "residuo_pct": 4.3e-05
+    }
+  },
+  "2023": {
+    "19": {
+      "nacional": 689754384,
+      "soma_biomas": 689754094,
+      "fora_biomas_px": 290,
+      "residuo_px": 290,
+      "residuo_pct": 4.2e-05
+    },
+    "36": {
+      "nacional": 27621679,
+      "soma_biomas": 27621679,
+      "fora_biomas_px": 0,
+      "residuo_px": 0,
+      "residuo_pct": 0.0
+    }
+  },
+  "2024": {
+    "19": {
+      "nacional": 696843330,
+      "soma_biomas": 696843030,
+      "fora_biomas_px": 300,
+      "residuo_px": 300,
+      "residuo_pct": 4.3e-05
+    },
+    "36": {
+      "nacional": 27668779,
+      "soma_biomas": 27668779,
+      "fora_biomas_px": 0,
+      "residuo_px": 0,
+      "residuo_pct": 0.0
+    }
+  },
+  "2025": {
+    "19": {
+      "nacional": 711346713,
+      "soma_biomas": 711346402,
+      "fora_biomas_px": 311,
+      "residuo_px": 311,
+      "residuo_pct": 4.4e-05
+    },
+    "36": {
+      "nacional": 27658623,
+      "soma_biomas": 27658623,
+      "fora_biomas_px": 0,
+      "residuo_px": 0,
+      "residuo_pct": 0.0
+    }
+  }
+}

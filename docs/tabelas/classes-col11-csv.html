@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dicionário de classes do MapBiomas Coleção 11 — SBSR 2027</title>
+<meta name="description" content="Os 33 códigos de origem observados nos rasters da Coleção 11, com nome, cor e status. As classes 19 (Lavoura Temporária) e 36 (Lavoura Perene) usadas nas áreas não estão neste dicionário: são sintéticas, criadas pela reclassificação que agrupa nove códigos de lavoura da legenda original.">
+<style>
+:root {
+  --fundo: #fbfcfa;
+  --texto: #1c2a24;
+  --suave: #56665e;
+  --borda: #d7e1da;
+  --verde: #1f6b4a;
+  --verde-escuro: #123f2c;
+  --verde-claro: #e8f2ec;
+  --areia: #f3efe6;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--fundo);
+  color: var(--texto);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.6;
+}
+a { color: var(--verde); text-underline-offset: 2px; }
+a:hover { color: var(--verde-escuro); }
+.container { width: min(1120px, 100% - 2.5rem); margin: 0 auto; }
+header.topo {
+  background: linear-gradient(135deg, var(--verde-escuro), var(--verde));
+  color: #fff;
+  padding: 3rem 0 2.6rem;
+}
+header.topo a { color: #fff; }
+.eyebrow {
+  margin: 0 0 .6rem;
+  font-size: .78rem;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  opacity: .85;
+}
+h1 { margin: 0 0 .8rem; font-size: clamp(1.8rem, 4vw, 2.7rem); line-height: 1.2; }
+.lead { max-width: 60ch; margin: 0 0 1rem; font-size: 1.05rem; opacity: .95; }
+.resumo { margin: 0; font-size: .92rem; opacity: .9; }
+main { padding: 2.6rem 0 1rem; }
+section { margin-bottom: 3rem; }
+h2 {
+  margin: 0 0 .5rem;
+  font-size: 1.5rem;
+  border-bottom: 2px solid var(--verde-claro);
+  padding-bottom: .45rem;
+}
+h3 { margin: 1.8rem 0 .6rem; font-size: 1.12rem; }
+p { margin: .6rem 0; }
+.cartoes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+  margin-top: 1.2rem;
+}
+.cartao {
+  background: #fff;
+  border: 1px solid var(--borda);
+  border-radius: 10px;
+  padding: 1.1rem 1.15rem;
+  display: flex;
+  flex-direction: column;
+  gap: .45rem;
+}
+.cartao h3 { margin: 0; font-size: 1.05rem; }
+.cartao p { margin: 0; color: var(--suave); font-size: .93rem; }
+.cartao-meta { font-size: .82rem !important; color: var(--verde) !important; }
+.acoes { display: flex; flex-wrap: wrap; gap: .7rem; align-items: center; margin-top: auto; padding-top: .5rem; }
+.botao {
+  display: inline-block;
+  background: var(--verde);
+  color: #fff;
+  text-decoration: none;
+  padding: .38rem .8rem;
+  border-radius: 6px;
+  font-size: .88rem;
+}
+.botao:hover { background: var(--verde-escuro); color: #fff; }
+.arquivos { list-style: none; margin: .8rem 0 0; padding: 0; border-top: 1px solid var(--borda); }
+.arquivos li {
+  display: grid;
+  grid-template-columns: minmax(180px, 320px) 1fr auto;
+  gap: .8rem;
+  padding: .65rem 0;
+  border-bottom: 1px solid var(--borda);
+  font-size: .93rem;
+}
+.arquivos .tam { color: var(--suave); white-space: nowrap; font-variant-numeric: tabular-nums; }
+.aviso {
+  background: var(--areia);
+  border-left: 4px solid var(--verde);
+  padding: .9rem 1rem;
+  border-radius: 0 6px 6px 0;
+  margin: 1rem 0;
+}
+.ferramentas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .7rem;
+  align-items: center;
+  margin: 1.3rem 0 .4rem;
+}
+.ferramentas label { font-weight: 600; font-size: .92rem; }
+.ferramentas input {
+  flex: 1 1 260px;
+  min-width: 0;
+  padding: .55rem .7rem;
+  font: inherit;
+  border: 1px solid var(--borda);
+  border-radius: 6px;
+  background: #fff;
+}
+.ferramentas input:focus { outline: 2px solid var(--verde); outline-offset: 1px; }
+.contador { color: var(--suave); font-size: .88rem; font-variant-numeric: tabular-nums; }
+.dica { color: var(--suave); font-size: .86rem; margin-bottom: .9rem; }
+.tabela-wrap {
+  max-height: 72vh;
+  overflow: auto;
+  border: 1px solid var(--borda);
+  border-radius: 8px;
+  background: #fff;
+}
+table { border-collapse: collapse; width: 100%; font-size: .9rem; }
+thead th {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background: var(--verde-claro);
+  color: var(--verde-escuro);
+  text-align: left;
+  padding: .6rem .7rem;
+  border-bottom: 2px solid var(--verde);
+  white-space: nowrap;
+}
+td { padding: .5rem .7rem; border-bottom: 1px solid var(--borda); vertical-align: top; }
+tbody tr:nth-child(even) { background: #f5f9f6; }
+tbody tr:hover { background: var(--verde-claro); }
+tbody tr[hidden] { display: none; }
+td.num { text-align: right; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.voltar { display: inline-block; margin-bottom: 1.2rem; font-size: .9rem; }
+footer.rodape {
+  border-top: 1px solid var(--borda);
+  background: var(--areia);
+  padding: 1.6rem 0 2rem;
+  margin-top: 2rem;
+  font-size: .86rem;
+  color: var(--suave);
+}
+footer.rodape p { margin: .4rem 0; }
+footer.rodape strong { color: var(--texto); }
+code {
+  background: rgba(31, 107, 74, .08);
+  padding: .05rem .3rem;
+  border-radius: 4px;
+  font-size: .92em;
+}
+@media (max-width: 640px) {
+  .arquivos li { grid-template-columns: 1fr; gap: .1rem; }
+  .tabela-wrap { max-height: 65vh; }
+  header.topo { padding: 2.2rem 0 1.8rem; }
+}
+</style>
+</head>
+<body>
+
+<header class="topo">
+  <div class="container">
+    <p class="eyebrow">Tabela · SBSR 2027</p>
+    <h1>Dicionário de classes do MapBiomas Coleção 11</h1>
+    <p class="lead">Os 33 códigos de origem observados nos rasters da Coleção 11, com nome, cor e status. As classes 19 (Lavoura Temporária) e 36 (Lavoura Perene) usadas nas áreas não estão neste dicionário: são sintéticas, criadas pela reclassificação que agrupa nove códigos de lavoura da legenda original.</p>
+    <p class="resumo">33 linhas · 8 colunas ·
+    <a href="../dados/col11/classes_col11.csv">baixar CSV bruto</a></p>
+  </div>
+</header>
+<main>
+  <div class="container">
+    <a class="voltar" href="../index.html">← Todos os dados</a>
+    <div class="ferramentas">
+      <label for="filtro">Filtrar</label>
+      <input id="filtro" type="search" placeholder="Digite para filtrar as linhas…" autocomplete="off">
+      <span id="contador" class="contador">33 linhas</span>
+    </div>
+    <p class="dica">A busca ignora acentos e maiúsculas e considera todas as
+    colunas. A tabela abaixo está completa; o arquivo original está em
+    <a href="../dados/col11/classes_col11.csv">classes_col11.csv</a>.</p>
+    <div class="tabela-wrap"><table id="tabela"><thead><tr><th scope="col">codigo</th><th scope="col">nome</th><th scope="col">hex</th><th scope="col">status</th><th scope="col">fora_legenda_classica</th><th scope="col">cor_oficial</th><th scope="col">observado_nos_rasteres</th><th scope="col">observacao</th></tr></thead><tbody><tr data-busca="3 Formacao Florestal #1f8d49 oficial nao sim sim "><td>3</td><td>Formacao Florestal</td><td>#1f8d49</td><td>oficial</td><td>nao</td><td>sim</td><td>sim</td><td></td></tr><tr data-busca="4 Formacao Savanica #7dc975 oficial nao sim sim "><td>4</td><td>Formacao Savanica</td><td>#7dc975</td><td>oficial</td><td>nao</td><td>sim</td><td>sim</td><td></td></tr><tr data-busca="5 Mangue #04381d oficial nao sim sim "><td>5</td><td>Mangue</td><td>#04381d</td><td>oficial</td><td>nao</td><td>sim</td><td>sim</td><td></td></tr><tr data-busca="6 Floresta Alagavel #007785 oficial nao sim sim "><td>6</td><td>Floresta Alagavel</td><td>#007785</td><td>oficial</td><td>nao</td><td>sim</td><td>sim</td><td></td></tr><tr data-busca="7 Savana Alagavel #228c70 oficial nao sim sim "><td>7</td><td>Savana Alagavel</td><td>#228c70</td><td>oficial</td><td>nao</td><td>sim</td><td>sim</td><td></td></tr><tr data-busca="9 Floresta Plantada #7a5900 oficial nao sim sim "><td>9</td><td>Floresta Plantada</td><td>#7a5900</td><td>oficial</td><td>nao</td><td>sim</td><td>sim</td><td></td></tr><tr data-busca="11 Campo Alagado e Area Pantanosa #519799 oficial nao sim sim "><td>11</td><td>Campo Alagado e Area Pantanosa</td><td>#519799</td><td>oficial</td><td>nao</td><td>sim</td><td>sim</td><td></td></tr><tr data-busca="12 Formacao Campestre #d6bc74 oficial nao sim sim "><td>12</td><td>Formacao Campestre</td><td>#d6bc74</td><td>oficial</td><td>nao</td><td>sim</td><td>sim</td><td></td></tr><tr data-busca="15 Pastagem #edde8e oficial nao sim sim "><td>15</td><td>Pastagem</td><td>#edde8e</td><td>oficial</td><td>nao</td><td>sim</td><td>sim</td><td></td></tr><tr data-busca="20 Cana #db7093 oficial nao sim sim "><td>20</td><td>Cana</td><td>#db7093</td><td>oficial</td><td>nao</td><td>sim</td><td>sim</td><td></td></tr><tr data-busca="21 Mosaico de Usos #ffefc3 oficial nao sim sim "><td>21</td><td>Mosaico de Usos</td><td>#ffefc3</td><td>oficial</td><td>nao</td><td>sim</td><td>sim</td><td></td></tr><tr data-busca="23 Praia, Duna e Areal #ffa07a oficial nao sim sim "><td>23</td><td>Praia, Duna e Areal</td><td>#ffa07a</td><td>oficial</td><td>nao</td><td>sim</td><td>sim</td><td></td></tr><tr data-busca="24 Area Urbanizada #d4271e oficial nao sim sim "><td>24</td><td>Area Urbanizada</td><td>#d4271e</td><td>oficial</td><td>nao</td><td>sim</td><td>sim</td><td></td></tr><tr data-busca="25 Outras Areas nao Vegetadas #db4d4f oficial nao sim sim "><td>25</td><td>Outras Areas nao Vegetadas</td><td>#db4d4f</td><td>oficial</td><td>nao</td><td>sim</td><td>sim</td><td></td></tr><tr data-busca="29 Afloramento Rochoso #ffaa5f oficial nao sim sim "><td>29</td><td>Afloramento Rochoso</td><td>#ffaa5f</td><td>oficial</td><td>nao</td><td>sim</td><td>sim</td><td></td></tr><tr data-busca="30 Mineracao #9c0027 oficial nao sim sim "><td>30</td><td>Mineracao</td><td>#9c0027</td><td>oficial</td><td>nao</td><td>sim</td><td>sim</td><td></td></tr><tr data-busca="31 Aquicultura #091077 oficial nao sim sim "><td>31</td><td>Aquicultura</td><td>#091077</td><td>oficial</td><td>nao</td><td>sim</td><td>sim</td><td></td></tr><tr data-busca="32 Apicum #fc8114 oficial nao sim sim "><td>32</td><td>Apicum</td><td>#fc8114</td><td>oficial</td><td>nao</td><td>sim</td><td>sim</td><td></td></tr><tr data-busca="33 Rio, Lago e Oceano #2532e4 oficial nao sim sim "><td>33</td><td>Rio, Lago e Oceano</td><td>#2532e4</td><td>oficial</td><td>nao</td><td>sim</td><td>sim</td><td></td></tr><tr data-busca="35 Dende #9065d0 oficial nao sim sim "><td>35</td><td>Dende</td><td>#9065d0</td><td>oficial</td><td>nao</td><td>sim</td><td>sim</td><td></td></tr><tr data-busca="39 Soja #f5b3c8 oficial nao sim sim "><td>39</td><td>Soja</td><td>#f5b3c8</td><td>oficial</td><td>nao</td><td>sim</td><td>sim</td><td></td></tr><tr data-busca="40 Arroz #c71585 oficial nao sim sim "><td>40</td><td>Arroz</td><td>#c71585</td><td>oficial</td><td>nao</td><td>sim</td><td>sim</td><td></td></tr><tr data-busca="41 Outras Lavouras Temporarias #f54ca9 oficial nao sim sim "><td>41</td><td>Outras Lavouras Temporarias</td><td>#f54ca9</td><td>oficial</td><td>nao</td><td>sim</td><td>sim</td><td></td></tr><tr data-busca="46 Cafe #d68fe2 oficial nao sim sim "><td>46</td><td>Cafe</td><td>#d68fe2</td><td>oficial</td><td>nao</td><td>sim</td><td>sim</td><td></td></tr><tr data-busca="47 Citrus #9932cc oficial nao sim sim "><td>47</td><td>Citrus</td><td>#9932cc</td><td>oficial</td><td>nao</td><td>sim</td><td>sim</td><td></td></tr><tr data-busca="48 Outras Lavouras Perenes #e6ccff oficial nao sim sim "><td>48</td><td>Outras Lavouras Perenes</td><td>#e6ccff</td><td>oficial</td><td>nao</td><td>sim</td><td>sim</td><td></td></tr><tr data-busca="49 Restinga Arborizada #02d659 oficial nao sim sim "><td>49</td><td>Restinga Arborizada</td><td>#02d659</td><td>oficial</td><td>nao</td><td>sim</td><td>sim</td><td></td></tr><tr data-busca="50 Restinga Herbacea #ad5100 oficial nao sim sim "><td>50</td><td>Restinga Herbacea</td><td>#ad5100</td><td>oficial</td><td>nao</td><td>sim</td><td>sim</td><td></td></tr><tr data-busca="62 Algodao (beta) #ff69b4 oficial nao sim sim "><td>62</td><td>Algodao (beta)</td><td>#ff69b4</td><td>oficial</td><td>nao</td><td>sim</td><td>sim</td><td></td></tr><tr data-busca="75 Usina Fotovoltaica (beta) #c12100 oficial nao sim sim "><td>75</td><td>Usina Fotovoltaica (beta)</td><td>#c12100</td><td>oficial</td><td>nao</td><td>sim</td><td>sim</td><td></td></tr><tr data-busca="77 Mosaico Herbaceo-Arbustivo #c49a5a oficial sim sim sim "><td>77</td><td>Mosaico Herbaceo-Arbustivo</td><td>#c49a5a</td><td>oficial</td><td>sim</td><td>sim</td><td>sim</td><td></td></tr><tr data-busca="84 Marisma #6fa8a3 oficial sim sim sim "><td>84</td><td>Marisma</td><td>#6fa8a3</td><td>oficial</td><td>sim</td><td>sim</td><td>sim</td><td></td></tr><tr data-busca="91 DESCONHECIDA (91) #808080 observado_pendente_mapeamento sim nao sim observado em area oceanica (CE/PI); ausente de brazil-collection-11.0.csv"><td>91</td><td>DESCONHECIDA (91)</td><td>#808080</td><td>observado_pendente_mapeamento</td><td>sim</td><td>nao</td><td>sim</td><td>observado em area oceanica (CE/PI); ausente de brazil-collection-11.0.csv</td></tr></tbody></table></div>
+  </div>
+</main>
+
+<footer class="rodape">
+  <div class="container">
+    <p><strong>Atribuição.</strong> Dados de origem conforme os termos da
+    Coleção 11 do MapBiomas (consultar
+    <a href="https://mapbiomas.org">mapbiomas.org</a>); esta obra derivada é
+    distribuída sob <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.pt-br">CC BY-SA 4.0</a>.
+    SIDRA/PAM (IBGE) — dados públicos.
+    O código do pipeline disponível sob solicitação.</p>
+    <p>Licença deste conjunto de dados: <a href="../licenca.html">CC BY-SA 4.0</a>.</p>
+    <p>Dados consolidados em 06/11/2026.</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var filtro = document.getElementById('filtro');
+  if (!filtro) return;
+  var linhas = Array.prototype.slice.call(document.querySelectorAll('#tabela tbody tr'));
+  var contador = document.getElementById('contador');
+  var total = linhas.length;
+  function normaliza(s) {
+    return s.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+  }
+  var dados = linhas.map(function (tr) {
+    return { tr: tr, chave: normaliza(tr.getAttribute('data-busca') || '') };
+  });
+  filtro.addEventListener('input', function () {
+    var q = normaliza(filtro.value.trim());
+    var visiveis = 0;
+    dados.forEach(function (item) {
+      var ok = !q || item.chave.indexOf(q) !== -1;
+      item.tr.hidden = !ok;
+      if (ok) visiveis += 1;
+    });
+    contador.firstChild.nodeValue = visiveis + ' de ' + total + ' linhas';
+  });
+})();
+</script>
+
+</body>
+</html>

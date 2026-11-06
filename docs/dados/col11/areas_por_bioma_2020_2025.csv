@@ -1,0 +1,127 @@
+ano,bioma,classe_id,classe_nome,pixels,area_ha,area_km2
+2020,Amazônia,19,Lavoura Temporária,79805678,7182511.02,71825.1102
+2020,Amazônia,36,Lavoura Perene,2629669,236670.21,2366.7021
+2020,Amazônia,total,Total lavouras,82435347,7419181.23,74191.8123
+2020,Cerrado,19,Lavoura Temporária,284673611,25620624.99,256206.2499
+2020,Cerrado,36,Lavoura Perene,7474535,672708.15,6727.0815
+2020,Cerrado,total,Total lavouras,292148146,26293333.14,262933.3314
+2020,Caatinga,19,Lavoura Temporária,14947495,1345274.55,13452.7455
+2020,Caatinga,36,Lavoura Perene,5442926,489863.34,4898.6334
+2020,Caatinga,total,Total lavouras,20390421,1835137.89,18351.3789
+2020,Mata Atlântica,19,Lavoura Temporária,224031042,20162793.78,201627.9378
+2020,Mata Atlântica,36,Lavoura Perene,12400354,1116031.86,11160.3186
+2020,Mata Atlântica,total,Total lavouras,236431396,21278825.64,212788.2564
+2020,Pantanal,19,Lavoura Temporária,111494,10034.46,100.3446
+2020,Pantanal,36,Lavoura Perene,0,0.0,0.0
+2020,Pantanal,total,Total lavouras,111494,10034.46,100.3446
+2020,Pampa,19,Lavoura Temporária,68241041,6141693.69,61416.9369
+2020,Pampa,36,Lavoura Perene,20109,1809.81,18.0981
+2020,Pampa,total,Total lavouras,68261150,6143503.5,61435.035
+2020,Brasil (total),19,Lavoura Temporária,671810361,60462932.49,604629.3249
+2020,Brasil (total),36,Lavoura Perene,27967593,2517083.37,25170.8337
+2020,Brasil (total),total,Total lavouras,699777954,62980015.86,629800.1586
+2021,Amazônia,19,Lavoura Temporária,81540445,7338640.05,73386.4005
+2021,Amazônia,36,Lavoura Perene,2683234,241491.06,2414.9106
+2021,Amazônia,total,Total lavouras,84223679,7580131.11,75801.3111
+2021,Cerrado,19,Lavoura Temporária,287171060,25845395.4,258453.954
+2021,Cerrado,36,Lavoura Perene,7441212,669709.08,6697.0908
+2021,Cerrado,total,Total lavouras,294612272,26515104.48,265151.0448
+2021,Caatinga,19,Lavoura Temporária,15081184,1357306.56,13573.0656
+2021,Caatinga,36,Lavoura Perene,5447132,490241.88,4902.4188
+2021,Caatinga,total,Total lavouras,20528316,1847548.44,18475.4844
+2021,Mata Atlântica,19,Lavoura Temporária,224622418,20216017.62,202160.1762
+2021,Mata Atlântica,36,Lavoura Perene,12178202,1096038.18,10960.3818
+2021,Mata Atlântica,total,Total lavouras,236800620,21312055.8,213120.558
+2021,Pantanal,19,Lavoura Temporária,112150,10093.5,100.935
+2021,Pantanal,36,Lavoura Perene,0,0.0,0.0
+2021,Pantanal,total,Total lavouras,112150,10093.5,100.935
+2021,Pampa,19,Lavoura Temporária,68473471,6162612.39,61626.1239
+2021,Pampa,36,Lavoura Perene,14440,1299.6,12.996
+2021,Pampa,total,Total lavouras,68487911,6163911.99,61639.1199
+2021,Brasil (total),19,Lavoura Temporária,677000728,60930065.52,609300.6552
+2021,Brasil (total),36,Lavoura Perene,27764220,2498779.8,24987.798
+2021,Brasil (total),total,Total lavouras,704764948,63428845.32,634288.4532
+2022,Amazônia,19,Lavoura Temporária,84016801,7561512.09,75615.1209
+2022,Amazônia,36,Lavoura Perene,2713655,244228.95,2442.2895
+2022,Amazônia,total,Total lavouras,86730456,7805741.04,78057.4104
+2022,Cerrado,19,Lavoura Temporária,291440200,26229618.0,262296.18
+2022,Cerrado,36,Lavoura Perene,7387782,664900.38,6649.0038
+2022,Cerrado,total,Total lavouras,298827982,26894518.38,268945.1838
+2022,Caatinga,19,Lavoura Temporária,15157841,1364205.69,13642.0569
+2022,Caatinga,36,Lavoura Perene,5436356,489272.04,4892.7204
+2022,Caatinga,total,Total lavouras,20594197,1853477.73,18534.7773
+2022,Mata Atlântica,19,Lavoura Temporária,225666280,20309965.2,203099.652
+2022,Mata Atlântica,36,Lavoura Perene,12065118,1085860.62,10858.6062
+2022,Mata Atlântica,total,Total lavouras,237731398,21395825.82,213958.2582
+2022,Pantanal,19,Lavoura Temporária,111719,10054.71,100.5471
+2022,Pantanal,36,Lavoura Perene,0,0.0,0.0
+2022,Pantanal,total,Total lavouras,111719,10054.71,100.5471
+2022,Pampa,19,Lavoura Temporária,66779330,6010139.7,60101.397
+2022,Pampa,36,Lavoura Perene,18068,1626.12,16.2612
+2022,Pampa,total,Total lavouras,66797398,6011765.82,60117.6582
+2022,Brasil (total),19,Lavoura Temporária,683172171,61485495.39,614854.9539
+2022,Brasil (total),36,Lavoura Perene,27620979,2485888.11,24858.8811
+2022,Brasil (total),total,Total lavouras,710793150,63971383.5,639713.835
+2023,Amazônia,19,Lavoura Temporária,87360079,7862407.11,78624.0711
+2023,Amazônia,36,Lavoura Perene,2732946,245965.14,2459.6514
+2023,Amazônia,total,Total lavouras,90093025,8108372.25,81083.7225
+2023,Cerrado,19,Lavoura Temporária,295681619,26611345.71,266113.4571
+2023,Cerrado,36,Lavoura Perene,7327694,659492.46,6594.9246
+2023,Cerrado,total,Total lavouras,303009313,27270838.17,272708.3817
+2023,Caatinga,19,Lavoura Temporária,15244295,1371986.55,13719.8655
+2023,Caatinga,36,Lavoura Perene,5436527,489287.43,4892.8743
+2023,Caatinga,total,Total lavouras,20680822,1861273.98,18612.7398
+2023,Mata Atlântica,19,Lavoura Temporária,225713313,20314198.17,203141.9817
+2023,Mata Atlântica,36,Lavoura Perene,12104664,1089419.76,10894.1976
+2023,Mata Atlântica,total,Total lavouras,237817977,21403617.93,214036.1793
+2023,Pantanal,19,Lavoura Temporária,111482,10033.38,100.3338
+2023,Pantanal,36,Lavoura Perene,0,0.0,0.0
+2023,Pantanal,total,Total lavouras,111482,10033.38,100.3338
+2023,Pampa,19,Lavoura Temporária,65643306,5907897.54,59078.9754
+2023,Pampa,36,Lavoura Perene,19848,1786.32,17.8632
+2023,Pampa,total,Total lavouras,65663154,5909683.86,59096.8386
+2023,Brasil (total),19,Lavoura Temporária,689754094,62077868.46,620778.6846
+2023,Brasil (total),36,Lavoura Perene,27621679,2485951.11,24859.5111
+2023,Brasil (total),total,Total lavouras,717375773,64563819.57,645638.1957
+2024,Amazônia,19,Lavoura Temporária,89702097,8073188.73,80731.8873
+2024,Amazônia,36,Lavoura Perene,2732356,245912.04,2459.1204
+2024,Amazônia,total,Total lavouras,92434453,8319100.77,83191.0077
+2024,Cerrado,19,Lavoura Temporária,300698410,27062856.9,270628.569
+2024,Cerrado,36,Lavoura Perene,7309851,657886.59,6578.8659
+2024,Cerrado,total,Total lavouras,308008261,27720743.49,277207.4349
+2024,Caatinga,19,Lavoura Temporária,15331491,1379834.19,13798.3419
+2024,Caatinga,36,Lavoura Perene,5437020,489331.8,4893.318
+2024,Caatinga,total,Total lavouras,20768511,1869165.99,18691.6599
+2024,Mata Atlântica,19,Lavoura Temporária,228023697,20522132.73,205221.3273
+2024,Mata Atlântica,36,Lavoura Perene,12160688,1094461.92,10944.6192
+2024,Mata Atlântica,total,Total lavouras,240184385,21616594.65,216165.9465
+2024,Pantanal,19,Lavoura Temporária,112617,10135.53,101.3553
+2024,Pantanal,36,Lavoura Perene,0,0.0,0.0
+2024,Pantanal,total,Total lavouras,112617,10135.53,101.3553
+2024,Pampa,19,Lavoura Temporária,62974718,5667724.62,56677.2462
+2024,Pampa,36,Lavoura Perene,28864,2597.76,25.9776
+2024,Pampa,total,Total lavouras,63003582,5670322.38,56703.2238
+2024,Brasil (total),19,Lavoura Temporária,696843030,62715872.7,627158.727
+2024,Brasil (total),36,Lavoura Perene,27668779,2490190.11,24901.9011
+2024,Brasil (total),total,Total lavouras,724511809,65206062.81,652060.6281
+2025,Amazônia,19,Lavoura Temporária,93352030,8401682.7,84016.827
+2025,Amazônia,36,Lavoura Perene,2732351,245911.59,2459.1159
+2025,Amazônia,total,Total lavouras,96084381,8647594.29,86475.9429
+2025,Cerrado,19,Lavoura Temporária,306471030,27582392.7,275823.927
+2025,Cerrado,36,Lavoura Perene,7305991,657539.19,6575.3919
+2025,Cerrado,total,Total lavouras,313777021,28239931.89,282399.3189
+2025,Caatinga,19,Lavoura Temporária,15432558,1388930.22,13889.3022
+2025,Caatinga,36,Lavoura Perene,5434063,489065.67,4890.6567
+2025,Caatinga,total,Total lavouras,20866621,1877995.89,18779.9589
+2025,Mata Atlântica,19,Lavoura Temporária,231323517,20819116.53,208191.1653
+2025,Mata Atlântica,36,Lavoura Perene,12158149,1094233.41,10942.3341
+2025,Mata Atlântica,total,Total lavouras,243481666,21913349.94,219133.4994
+2025,Pantanal,19,Lavoura Temporária,123853,11146.77,111.4677
+2025,Pantanal,36,Lavoura Perene,0,0.0,0.0
+2025,Pantanal,total,Total lavouras,123853,11146.77,111.4677
+2025,Pampa,19,Lavoura Temporária,64643414,5817907.26,58179.0726
+2025,Pampa,36,Lavoura Perene,28069,2526.21,25.2621
+2025,Pampa,total,Total lavouras,64671483,5820433.47,58204.3347
+2025,Brasil (total),19,Lavoura Temporária,711346402,64021176.18,640211.7618
+2025,Brasil (total),36,Lavoura Perene,27658623,2489276.07,24892.7607
+2025,Brasil (total),total,Total lavouras,739005025,66510452.25,665104.5225

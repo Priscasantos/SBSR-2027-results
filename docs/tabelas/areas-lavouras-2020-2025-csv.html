@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Área de lavouras no Brasil, 2020–2025 — SBSR 2027</title>
+<meta name="description" content="Série anual da área ocupada pelas classes sintéticas 19 (Lavoura Temporária) e 36 (Lavoura Perene), que agrupam nove códigos de lavoura da legenda original, com totais nacionais em pixels, hectares e km².">
+<style>
+:root {
+  --fundo: #fbfcfa;
+  --texto: #1c2a24;
+  --suave: #56665e;
+  --borda: #d7e1da;
+  --verde: #1f6b4a;
+  --verde-escuro: #123f2c;
+  --verde-claro: #e8f2ec;
+  --areia: #f3efe6;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--fundo);
+  color: var(--texto);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.6;
+}
+a { color: var(--verde); text-underline-offset: 2px; }
+a:hover { color: var(--verde-escuro); }
+.container { width: min(1120px, 100% - 2.5rem); margin: 0 auto; }
+header.topo {
+  background: linear-gradient(135deg, var(--verde-escuro), var(--verde));
+  color: #fff;
+  padding: 3rem 0 2.6rem;
+}
+header.topo a { color: #fff; }
+.eyebrow {
+  margin: 0 0 .6rem;
+  font-size: .78rem;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  opacity: .85;
+}
+h1 { margin: 0 0 .8rem; font-size: clamp(1.8rem, 4vw, 2.7rem); line-height: 1.2; }
+.lead { max-width: 60ch; margin: 0 0 1rem; font-size: 1.05rem; opacity: .95; }
+.resumo { margin: 0; font-size: .92rem; opacity: .9; }
+main { padding: 2.6rem 0 1rem; }
+section { margin-bottom: 3rem; }
+h2 {
+  margin: 0 0 .5rem;
+  font-size: 1.5rem;
+  border-bottom: 2px solid var(--verde-claro);
+  padding-bottom: .45rem;
+}
+h3 { margin: 1.8rem 0 .6rem; font-size: 1.12rem; }
+p { margin: .6rem 0; }
+.cartoes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+  margin-top: 1.2rem;
+}
+.cartao {
+  background: #fff;
+  border: 1px solid var(--borda);
+  border-radius: 10px;
+  padding: 1.1rem 1.15rem;
+  display: flex;
+  flex-direction: column;
+  gap: .45rem;
+}
+.cartao h3 { margin: 0; font-size: 1.05rem; }
+.cartao p { margin: 0; color: var(--suave); font-size: .93rem; }
+.cartao-meta { font-size: .82rem !important; color: var(--verde) !important; }
+.acoes { display: flex; flex-wrap: wrap; gap: .7rem; align-items: center; margin-top: auto; padding-top: .5rem; }
+.botao {
+  display: inline-block;
+  background: var(--verde);
+  color: #fff;
+  text-decoration: none;
+  padding: .38rem .8rem;
+  border-radius: 6px;
+  font-size: .88rem;
+}
+.botao:hover { background: var(--verde-escuro); color: #fff; }
+.arquivos { list-style: none; margin: .8rem 0 0; padding: 0; border-top: 1px solid var(--borda); }
+.arquivos li {
+  display: grid;
+  grid-template-columns: minmax(180px, 320px) 1fr auto;
+  gap: .8rem;
+  padding: .65rem 0;
+  border-bottom: 1px solid var(--borda);
+  font-size: .93rem;
+}
+.arquivos .tam { color: var(--suave); white-space: nowrap; font-variant-numeric: tabular-nums; }
+.aviso {
+  background: var(--areia);
+  border-left: 4px solid var(--verde);
+  padding: .9rem 1rem;
+  border-radius: 0 6px 6px 0;
+  margin: 1rem 0;
+}
+.ferramentas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .7rem;
+  align-items: center;
+  margin: 1.3rem 0 .4rem;
+}
+.ferramentas label { font-weight: 600; font-size: .92rem; }
+.ferramentas input {
+  flex: 1 1 260px;
+  min-width: 0;
+  padding: .55rem .7rem;
+  font: inherit;
+  border: 1px solid var(--borda);
+  border-radius: 6px;
+  background: #fff;
+}
+.ferramentas input:focus { outline: 2px solid var(--verde); outline-offset: 1px; }
+.contador { color: var(--suave); font-size: .88rem; font-variant-numeric: tabular-nums; }
+.dica { color: var(--suave); font-size: .86rem; margin-bottom: .9rem; }
+.tabela-wrap {
+  max-height: 72vh;
+  overflow: auto;
+  border: 1px solid var(--borda);
+  border-radius: 8px;
+  background: #fff;
+}
+table { border-collapse: collapse; width: 100%; font-size: .9rem; }
+thead th {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background: var(--verde-claro);
+  color: var(--verde-escuro);
+  text-align: left;
+  padding: .6rem .7rem;
+  border-bottom: 2px solid var(--verde);
+  white-space: nowrap;
+}
+td { padding: .5rem .7rem; border-bottom: 1px solid var(--borda); vertical-align: top; }
+tbody tr:nth-child(even) { background: #f5f9f6; }
+tbody tr:hover { background: var(--verde-claro); }
+tbody tr[hidden] { display: none; }
+td.num { text-align: right; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.voltar { display: inline-block; margin-bottom: 1.2rem; font-size: .9rem; }
+footer.rodape {
+  border-top: 1px solid var(--borda);
+  background: var(--areia);
+  padding: 1.6rem 0 2rem;
+  margin-top: 2rem;
+  font-size: .86rem;
+  color: var(--suave);
+}
+footer.rodape p { margin: .4rem 0; }
+footer.rodape strong { color: var(--texto); }
+code {
+  background: rgba(31, 107, 74, .08);
+  padding: .05rem .3rem;
+  border-radius: 4px;
+  font-size: .92em;
+}
+@media (max-width: 640px) {
+  .arquivos li { grid-template-columns: 1fr; gap: .1rem; }
+  .tabela-wrap { max-height: 65vh; }
+  header.topo { padding: 2.2rem 0 1.8rem; }
+}
+</style>
+</head>
+<body>
+
+<header class="topo">
+  <div class="container">
+    <p class="eyebrow">Tabela · SBSR 2027</p>
+    <h1>Área de lavouras no Brasil, 2020–2025</h1>
+    <p class="lead">Série anual da área ocupada pelas classes sintéticas 19 (Lavoura Temporária) e 36 (Lavoura Perene), que agrupam nove códigos de lavoura da legenda original, com totais nacionais em pixels, hectares e km².</p>
+    <p class="resumo">18 linhas · 6 colunas ·
+    <a href="../dados/col11/areas_lavouras_2020_2025.csv">baixar CSV bruto</a></p>
+  </div>
+</header>
+<main>
+  <div class="container">
+    <a class="voltar" href="../index.html">← Todos os dados</a>
+    <div class="ferramentas">
+      <label for="filtro">Filtrar</label>
+      <input id="filtro" type="search" placeholder="Digite para filtrar as linhas…" autocomplete="off">
+      <span id="contador" class="contador">18 linhas</span>
+    </div>
+    <p class="dica">A busca ignora acentos e maiúsculas e considera todas as
+    colunas. A tabela abaixo está completa; o arquivo original está em
+    <a href="../dados/col11/areas_lavouras_2020_2025.csv">areas_lavouras_2020_2025.csv</a>.</p>
+    <div class="tabela-wrap"><table id="tabela"><thead><tr><th scope="col">ano</th><th scope="col">classe_id</th><th scope="col">classe_nome</th><th scope="col">pixels</th><th scope="col">area_ha</th><th scope="col">area_km2</th></tr></thead><tbody><tr data-busca="2020 19 Lavoura Temporária 671810769 60462969.21 604629.6921"><td>2020</td><td>19</td><td>Lavoura Temporária</td><td class="num">671.810.769</td><td class="num">60.462.969,21</td><td class="num">604.629,6921</td></tr><tr data-busca="2020 36 Lavoura Perene 27967605 2517084.45 25170.8445"><td>2020</td><td>36</td><td>Lavoura Perene</td><td class="num">27.967.605</td><td class="num">2.517.084,45</td><td class="num">25.170,8445</td></tr><tr data-busca="2020 total Total lavouras 699778374 62980053.66 629800.5366"><td>2020</td><td>total</td><td>Total lavouras</td><td class="num">699.778.374</td><td class="num">62.980.053,66</td><td class="num">629.800,5366</td></tr><tr data-busca="2021 19 Lavoura Temporária 677001099 60930098.91 609300.9891"><td>2021</td><td>19</td><td>Lavoura Temporária</td><td class="num">677.001.099</td><td class="num">60.930.098,91</td><td class="num">609.300,9891</td></tr><tr data-busca="2021 36 Lavoura Perene 27764232 2498780.88 24987.8088"><td>2021</td><td>36</td><td>Lavoura Perene</td><td class="num">27.764.232</td><td class="num">2.498.780,88</td><td class="num">24.987,8088</td></tr><tr data-busca="2021 total Total lavouras 704765331 63428879.79 634288.7979"><td>2021</td><td>total</td><td>Total lavouras</td><td class="num">704.765.331</td><td class="num">63.428.879,79</td><td class="num">634.288,7979</td></tr><tr data-busca="2022 19 Lavoura Temporária 683172449 61485520.41 614855.2041"><td>2022</td><td>19</td><td>Lavoura Temporária</td><td class="num">683.172.449</td><td class="num">61.485.520,41</td><td class="num">614.855,2041</td></tr><tr data-busca="2022 36 Lavoura Perene 27620991 2485889.19 24858.8919"><td>2022</td><td>36</td><td>Lavoura Perene</td><td class="num">27.620.991</td><td class="num">2.485.889,19</td><td class="num">24.858,8919</td></tr><tr data-busca="2022 total Total lavouras 710793440 63971409.6 639714.096"><td>2022</td><td>total</td><td>Total lavouras</td><td class="num">710.793.440</td><td class="num">63.971.409,6</td><td class="num">639.714,096</td></tr><tr data-busca="2023 19 Lavoura Temporária 689754384 62077894.56 620778.9456"><td>2023</td><td>19</td><td>Lavoura Temporária</td><td class="num">689.754.384</td><td class="num">62.077.894,56</td><td class="num">620.778,9456</td></tr><tr data-busca="2023 36 Lavoura Perene 27621679 2485951.11 24859.5111"><td>2023</td><td>36</td><td>Lavoura Perene</td><td class="num">27.621.679</td><td class="num">2.485.951,11</td><td class="num">24.859,5111</td></tr><tr data-busca="2023 total Total lavouras 717376063 64563845.67 645638.4567"><td>2023</td><td>total</td><td>Total lavouras</td><td class="num">717.376.063</td><td class="num">64.563.845,67</td><td class="num">645.638,4567</td></tr><tr data-busca="2024 19 Lavoura Temporária 696843330 62715899.7 627158.997"><td>2024</td><td>19</td><td>Lavoura Temporária</td><td class="num">696.843.330</td><td class="num">62.715.899,7</td><td class="num">627.158,997</td></tr><tr data-busca="2024 36 Lavoura Perene 27668779 2490190.11 24901.9011"><td>2024</td><td>36</td><td>Lavoura Perene</td><td class="num">27.668.779</td><td class="num">2.490.190,11</td><td class="num">24.901,9011</td></tr><tr data-busca="2024 total Total lavouras 724512109 65206089.81 652060.8981"><td>2024</td><td>total</td><td>Total lavouras</td><td class="num">724.512.109</td><td class="num">65.206.089,81</td><td class="num">652.060,8981</td></tr><tr data-busca="2025 19 Lavoura Temporária 711346713 64021204.17 640212.0417"><td>2025</td><td>19</td><td>Lavoura Temporária</td><td class="num">711.346.713</td><td class="num">64.021.204,17</td><td class="num">640.212,0417</td></tr><tr data-busca="2025 36 Lavoura Perene 27658623 2489276.07 24892.7607"><td>2025</td><td>36</td><td>Lavoura Perene</td><td class="num">27.658.623</td><td class="num">2.489.276,07</td><td class="num">24.892,7607</td></tr><tr data-busca="2025 total Total lavouras 739005336 66510480.24 665104.8024"><td>2025</td><td>total</td><td>Total lavouras</td><td class="num">739.005.336</td><td class="num">66.510.480,24</td><td class="num">665.104,8024</td></tr></tbody></table></div>
+  </div>
+</main>
+
+<footer class="rodape">
+  <div class="container">
+    <p><strong>Atribuição.</strong> Dados de origem conforme os termos da
+    Coleção 11 do MapBiomas (consultar
+    <a href="https://mapbiomas.org">mapbiomas.org</a>); esta obra derivada é
+    distribuída sob <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.pt-br">CC BY-SA 4.0</a>.
+    SIDRA/PAM (IBGE) — dados públicos.
+    O código do pipeline disponível sob solicitação.</p>
+    <p>Licença deste conjunto de dados: <a href="../licenca.html">CC BY-SA 4.0</a>.</p>
+    <p>Dados consolidados em 06/11/2026.</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var filtro = document.getElementById('filtro');
+  if (!filtro) return;
+  var linhas = Array.prototype.slice.call(document.querySelectorAll('#tabela tbody tr'));
+  var contador = document.getElementById('contador');
+  var total = linhas.length;
+  function normaliza(s) {
+    return s.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+  }
+  var dados = linhas.map(function (tr) {
+    return { tr: tr, chave: normaliza(tr.getAttribute('data-busca') || '') };
+  });
+  filtro.addEventListener('input', function () {
+    var q = normaliza(filtro.value.trim());
+    var visiveis = 0;
+    dados.forEach(function (item) {
+      var ok = !q || item.chave.indexOf(q) !== -1;
+      item.tr.hidden = !ok;
+      if (ok) visiveis += 1;
+    });
+    contador.firstChild.nodeValue = visiveis + ' de ' + total + ' linhas';
+  });
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dados processados — MapBiomas Col. 11 (2020–2025) e SIDRA/PAM (2000–2024, em preparação) — SBSR 2027</title>
+<meta name="description" content="Séries tabulares de lavouras por bioma (MapBiomas Coleção 11, 2020–2025) e, quando disponíveis, produção agrícola municipal (SIDRA/PAM, 2000–2024).">
+<style>
+:root {
+  --fundo: #fbfcfa;
+  --texto: #1c2a24;
+  --suave: #56665e;
+  --borda: #d7e1da;
+  --verde: #1f6b4a;
+  --verde-escuro: #123f2c;
+  --verde-claro: #e8f2ec;
+  --areia: #f3efe6;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--fundo);
+  color: var(--texto);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.6;
+}
+a { color: var(--verde); text-underline-offset: 2px; }
+a:hover { color: var(--verde-escuro); }
+.container { width: min(1120px, 100% - 2.5rem); margin: 0 auto; }
+header.topo {
+  background: linear-gradient(135deg, var(--verde-escuro), var(--verde));
+  color: #fff;
+  padding: 3rem 0 2.6rem;
+}
+header.topo a { color: #fff; }
+.eyebrow {
+  margin: 0 0 .6rem;
+  font-size: .78rem;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  opacity: .85;
+}
+h1 { margin: 0 0 .8rem; font-size: clamp(1.8rem, 4vw, 2.7rem); line-height: 1.2; }
+.lead { max-width: 60ch; margin: 0 0 1rem; font-size: 1.05rem; opacity: .95; }
+.resumo { margin: 0; font-size: .92rem; opacity: .9; }
+main { padding: 2.6rem 0 1rem; }
+section { margin-bottom: 3rem; }
+h2 {
+  margin: 0 0 .5rem;
+  font-size: 1.5rem;
+  border-bottom: 2px solid var(--verde-claro);
+  padding-bottom: .45rem;
+}
+h3 { margin: 1.8rem 0 .6rem; font-size: 1.12rem; }
+p { margin: .6rem 0; }
+.cartoes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+  margin-top: 1.2rem;
+}
+.cartao {
+  background: #fff;
+  border: 1px solid var(--borda);
+  border-radius: 10px;
+  padding: 1.1rem 1.15rem;
+  display: flex;
+  flex-direction: column;
+  gap: .45rem;
+}
+.cartao h3 { margin: 0; font-size: 1.05rem; }
+.cartao p { margin: 0; color: var(--suave); font-size: .93rem; }
+.cartao-meta { font-size: .82rem !important; color: var(--verde) !important; }
+.acoes { display: flex; flex-wrap: wrap; gap: .7rem; align-items: center; margin-top: auto; padding-top: .5rem; }
+.botao {
+  display: inline-block;
+  background: var(--verde);
+  color: #fff;
+  text-decoration: none;
+  padding: .38rem .8rem;
+  border-radius: 6px;
+  font-size: .88rem;
+}
+.botao:hover { background: var(--verde-escuro); color: #fff; }
+.arquivos { list-style: none; margin: .8rem 0 0; padding: 0; border-top: 1px solid var(--borda); }
+.arquivos li {
+  display: grid;
+  grid-template-columns: minmax(180px, 320px) 1fr auto;
+  gap: .8rem;
+  padding: .65rem 0;
+  border-bottom: 1px solid var(--borda);
+  font-size: .93rem;
+}
+.arquivos .tam { color: var(--suave); white-space: nowrap; font-variant-numeric: tabular-nums; }
+.aviso {
+  background: var(--areia);
+  border-left: 4px solid var(--verde);
+  padding: .9rem 1rem;
+  border-radius: 0 6px 6px 0;
+  margin: 1rem 0;
+}
+.ferramentas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .7rem;
+  align-items: center;
+  margin: 1.3rem 0 .4rem;
+}
+.ferramentas label { font-weight: 600; font-size: .92rem; }
+.ferramentas input {
+  flex: 1 1 260px;
+  min-width: 0;
+  padding: .55rem .7rem;
+  font: inherit;
+  border: 1px solid var(--borda);
+  border-radius: 6px;
+  background: #fff;
+}
+.ferramentas input:focus { outline: 2px solid var(--verde); outline-offset: 1px; }
+.contador { color: var(--suave); font-size: .88rem; font-variant-numeric: tabular-nums; }
+.dica { color: var(--suave); font-size: .86rem; margin-bottom: .9rem; }
+.tabela-wrap {
+  max-height: 72vh;
+  overflow: auto;
+  border: 1px solid var(--borda);
+  border-radius: 8px;
+  background: #fff;
+}
+table { border-collapse: collapse; width: 100%; font-size: .9rem; }
+thead th {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background: var(--verde-claro);
+  color: var(--verde-escuro);
+  text-align: left;
+  padding: .6rem .7rem;
+  border-bottom: 2px solid var(--verde);
+  white-space: nowrap;
+}
+td { padding: .5rem .7rem; border-bottom: 1px solid var(--borda); vertical-align: top; }
+tbody tr:nth-child(even) { background: #f5f9f6; }
+tbody tr:hover { background: var(--verde-claro); }
+tbody tr[hidden] { display: none; }
+td.num { text-align: right; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.voltar { display: inline-block; margin-bottom: 1.2rem; font-size: .9rem; }
+footer.rodape {
+  border-top: 1px solid var(--borda);
+  background: var(--areia);
+  padding: 1.6rem 0 2rem;
+  margin-top: 2rem;
+  font-size: .86rem;
+  color: var(--suave);
+}
+footer.rodape p { margin: .4rem 0; }
+footer.rodape strong { color: var(--texto); }
+code {
+  background: rgba(31, 107, 74, .08);
+  padding: .05rem .3rem;
+  border-radius: 4px;
+  font-size: .92em;
+}
+@media (max-width: 640px) {
+  .arquivos li { grid-template-columns: 1fr; gap: .1rem; }
+  .tabela-wrap { max-height: 65vh; }
+  header.topo { padding: 2.2rem 0 1.8rem; }
+}
+</style>
+</head>
+<body>
+
+<header class="topo">
+  <div class="container">
+    <p class="eyebrow">SBSR 2027 · dados de apoio</p>
+    <h1>Dados processados — MapBiomas Col. 11 (2020–2025) e SIDRA/PAM (2000–2024, em preparação)</h1>
+    <p class="lead">Séries tabulares de uso e cobertura da terra e de
+    produção agrícola por bioma no Brasil, publicadas para reuso e
+    verificação dos resultados do artigo. Os dados do MapBiomas Coleção 11
+    cobrem 2020–2025; a série SIDRA/PAM (2000–2024) está em preparação e
+    será publicada quando disponível.</p>
+    <p class="resumo">3 tabelas · 177 linhas · 6 arquivos auxiliares · dados consolidados em 06/11/2026</p>
+  </div>
+</header>
+<main>
+
+<section id="col11">
+  <div class="container">
+    <h2>MapBiomas Coleção 11</h2>
+    <p>Lavouras temporárias (classe 19) e perenes (classe 36) — classes sintéticas que agrupam nove códigos de lavoura da legenda original — derivadas do MapBiomas Coleção 11, 2020–2025, em resolução de 30 m e grade equal-area (EPSG:10857).</p>
+    <div class="cartoes">
+
+      <article class="cartao">
+        <h3><a href="tabelas/areas-lavouras-2020-2025-csv.html">Área de lavouras no Brasil, 2020–2025</a></h3>
+        <p>Série anual da área ocupada pelas classes sintéticas 19 (Lavoura Temporária) e 36 (Lavoura Perene), que agrupam nove códigos de lavoura da legenda original, com totais nacionais em pixels, hectares e km².</p>
+        <p class="cartao-meta">18 linhas · 6 colunas</p>
+        <div class="acoes">
+          <a class="botao" href="tabelas/areas-lavouras-2020-2025-csv.html">Ver tabela</a>
+          <a href="dados/col11/areas_lavouras_2020_2025.csv">CSV bruto</a>
+        </div>
+      </article>
+
+      <article class="cartao">
+        <h3><a href="tabelas/areas-por-bioma-2020-2025-csv.html">Área de lavouras por bioma, 2020–2025</a></h3>
+        <p>Área das classes sintéticas 19 e 36 nos seis biomas brasileiros, mais a soma dos biomas, em pixels, hectares e km².</p>
+        <p class="cartao-meta">126 linhas · 7 colunas</p>
+        <div class="acoes">
+          <a class="botao" href="tabelas/areas-por-bioma-2020-2025-csv.html">Ver tabela</a>
+          <a href="dados/col11/areas_por_bioma_2020_2025.csv">CSV bruto</a>
+        </div>
+      </article>
+
+      <article class="cartao">
+        <h3><a href="tabelas/classes-col11-csv.html">Dicionário de classes do MapBiomas Coleção 11</a></h3>
+        <p>Os 33 códigos de origem observados nos rasters da Coleção 11, com nome, cor e status. As classes 19 (Lavoura Temporária) e 36 (Lavoura Perene) usadas nas áreas não estão neste dicionário: são sintéticas, criadas pela reclassificação que agrupa nove códigos de lavoura da legenda original.</p>
+        <p class="cartao-meta">33 linhas · 8 colunas</p>
+        <div class="acoes">
+          <a class="botao" href="tabelas/classes-col11-csv.html">Ver tabela</a>
+          <a href="dados/col11/classes_col11.csv">CSV bruto</a>
+        </div>
+      </article>
+
+    </div>
+
+    <h3>Arquivos auxiliares (JSON e metadados)</h3>
+    <ul class="arquivos">
+
+      <li>
+        <span><a href="dados/col11/contagens_fase2_4326.json">contagens_fase2_4326.json</a></span>
+        <span>Contagens anuais de pixels das classes 19 e 36, de NoData e do total da grade, antes da reprojeção para Albers.</span>
+        <span class="tam">1,3 KB</span>
+      </li>
+
+      <li>
+        <span><a href="dados/col11/contagens_fase4_albers.json">contagens_fase4_albers.json</a></span>
+        <span>Contagens nacionais de pixels das classes 19 e 36 na grade equal-area, com tamanho e mtime dos rasters de origem como controle de build.</span>
+        <span class="tam">704 B</span>
+      </li>
+
+      <li>
+        <span><a href="dados/col11/contagens_por_bioma.json">contagens_por_bioma.json</a></span>
+        <span>Pares [pixels classe 19, pixels classe 36] por ano, na ordem dos códigos da máscara: 0 = fora dos biomas; 1 a 6 = Amazônia, Cerrado, Caatinga, Mata Atlântica, Pantanal e Pampa.</span>
+        <span class="tam">1,8 KB</span>
+      </li>
+
+      <li>
+        <span><a href="dados/col11/areas_biomas_mascara.json">areas_biomas_mascara.json</a></span>
+        <span>Pixels e área de cada bioma na grade Albers, comparados com as áreas oficiais aproximadas do IBGE (delta percentual).</span>
+        <span class="tam">1,0 KB</span>
+      </li>
+
+      <li>
+        <span><a href="dados/col11/residuos_cobertura_biomas.json">residuos_cobertura_biomas.json</a></span>
+        <span>Diferença, por ano e classe, entre a contagem nacional e a soma dos biomas; pixels fora da máscara e resíduo percentual.</span>
+        <span class="tam">2,0 KB</span>
+      </li>
+
+      <li>
+        <span><a href="dados/col11/overviews_info.json">overviews_info.json</a></span>
+        <span>Níveis de overview, resampling, compressão e geometria dos rasters reclassificados usados para gerar as estatísticas.</span>
+        <span class="tam">4,8 KB</span>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section id="sidra">
+  <div class="container">
+    <h2>SIDRA/PAM (IBGE) — em preparação</h2>
+    <p>Estatísticas anuais da produção agrícola municipal do SIDRA/PAM
+    (IBGE, tabela 5457), série 2000–2024. A agregação por bioma usa
+    interpolação areal dos municípios (método primário, ADR-001); a
+    atribuição por centroide municipal (<code>predicate='within'</code>)
+    é a análise de sensibilidade S-A. <strong>Nenhum CSV do SIDRA foi
+    publicado ainda</strong>: os arquivos aparecerão aqui quando estiverem
+    disponíveis.</p>
+  </div>
+</section>
+
+
+<section>
+  <div class="container">
+    <h2>Resumo das tabelas</h2>
+    <div class="tabela-wrap">
+      <table>
+        <thead><tr><th scope="col">Arquivo</th><th scope="col">Conteúdo</th>
+        <th scope="col">Linhas</th><th scope="col">Download</th></tr></thead>
+        <tbody>
+          <tr><td><a href="tabelas/areas-lavouras-2020-2025-csv.html">areas_lavouras_2020_2025.csv</a></td><td>Área de lavouras no Brasil, 2020–2025</td><td class="num">18</td><td><a href="dados/col11/areas_lavouras_2020_2025.csv">CSV</a></td></tr><tr><td><a href="tabelas/areas-por-bioma-2020-2025-csv.html">areas_por_bioma_2020_2025.csv</a></td><td>Área de lavouras por bioma, 2020–2025</td><td class="num">126</td><td><a href="dados/col11/areas_por_bioma_2020_2025.csv">CSV</a></td></tr><tr><td><a href="tabelas/classes-col11-csv.html">classes_col11.csv</a></td><td>Dicionário de classes do MapBiomas Coleção 11</td><td class="num">33</td><td><a href="dados/col11/classes_col11.csv">CSV</a></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+  <section>
+    <div class="container">
+      <div class="aviso">
+        <strong>Escopo.</strong> Este repositório contém apenas dados
+        tabulares processados. Rasters, shapefiles, estilos de mapa e o
+        manuscrito do artigo não são publicados aqui. O
+        código do pipeline disponível sob solicitação.
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="rodape">
+  <div class="container">
+    <p><strong>Atribuição.</strong> Dados de origem conforme os termos da
+    Coleção 11 do MapBiomas (consultar
+    <a href="https://mapbiomas.org">mapbiomas.org</a>); esta obra derivada é
+    distribuída sob <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.pt-br">CC BY-SA 4.0</a>.
+    SIDRA/PAM (IBGE) — dados públicos.
+    O código do pipeline disponível sob solicitação.</p>
+    <p>Licença deste conjunto de dados: <a href="licenca.html">CC BY-SA 4.0</a>.</p>
+    <p>Dados consolidados em 06/11/2026.</p>
+  </div>
+</footer>
+
+
+</body>
+</html>
